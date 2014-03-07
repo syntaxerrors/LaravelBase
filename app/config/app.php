@@ -129,6 +129,7 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Juy\Profiler\Providers\ProfilerServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+		'anlutro\cURL\Laravel\cURLServiceProvider',
 		'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
 		'Menu\MenuServiceProvider',
 		'Syntax\Core\CoreServiceProvider',
@@ -199,6 +200,7 @@ return array(
 		'Str'                         => 'Illuminate\Support\Str',
 		'URL'                         => 'Illuminate\Support\Facades\URL',
 		'Image'                       => 'Intervention\Image\Facades\Image',
+		'cURL'                        => 'anlutro\cURL\Laravel\cURL',
 		'Menu'                        => 'Menu\Menu',
 	),
 
