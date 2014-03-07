@@ -133,7 +133,6 @@ return array(
 		'Menu\MenuServiceProvider',
 		'Syntax\Core\CoreServiceProvider',
 		'Syntax\Core\View\ViewServiceProvider',
-		'Syntax\Core\Forum\ForumServiceProvider',
 		'Syntax\Core\Control\CoreBugServiceProvider',
 		'Syntax\Core\Utility\UtilityServiceProvider',
 		'Syntax\Core\Utility\AliasServiceProvider',
