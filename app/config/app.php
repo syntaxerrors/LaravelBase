@@ -77,7 +77,7 @@ return array(
 	|
 	*/
 
-	'key' => 'rwCXeh5s6nUiTYNLloGlpotn0cCKsawg',
+	'key' => 'V02hAzhfd9yh92PfWDlEgPYhnJBezvtH',
 
 	/*
 	|--------------------------------------------------------------------------
