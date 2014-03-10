@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'default' => 'control',
+	'default' => 'default',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -27,13 +27,13 @@ return array(
 	*/
 
 	'connections' => array(
-		'control' => array(
+		'default' => array(
 			'host'      => 'localhost:1979',
 			'username'  => 'stygian',
 			'password'  => 'stygicide',
 			'key'       => '',
 			'keyphrase' => '',
-			'root'      => '/home/stygian/public_control'
+			'root'      => '/home/stygian/dev/test'
 		),
 
 	),
@@ -51,7 +51,7 @@ return array(
 
 	'groups' => array(
 
-		'web' => array('control')
+		'web' => array('default')
 
 	),
 
