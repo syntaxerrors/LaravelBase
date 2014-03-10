@@ -40,7 +40,7 @@ class MigrationCommand extends Command {
 	{
 		// Set up the variables
 		$stream             = fopen('php://output', 'w');
-		$syntaxDirectories  = File::directories(base_path() .'/vendor/syntax');
+		$syntaxDirectories  = File::directories(base_path('vendor/syntax'));
 		$migrationDirectory = '/src/database/migrations';
 		$seedDirectory      = '/src/database/seeds';
 
@@ -50,8 +50,14 @@ class MigrationCommand extends Command {
 
 			// Handle the migrations
 			if (File::exists($syntaxDirectory . $migrationDirectory)) {
+				// Set up a migration location artisan can use
+				$migrationLocation = str_replace(base_path() .'/', '', $syntaxDirectory . $migrationDirectory);
+
 				$this->info('Running '. $package .' migrations...');
-				Artisan::call('migrate', array('--path' => $syntaxDirectory . $migrationDirectory), new StreamOutput($stream));
+
+				// Run the migrations
+				Artisan::call('migrate', array('--path' => $migrationLocation), new StreamOutput($stream));
+
 				$this->info(ucwords($package) .' migrations complete!');
 			}
 
@@ -61,6 +67,7 @@ class MigrationCommand extends Command {
 
 				if (count($seeds) > 0) {
 					$this->info('Running '. $package .' seeds...');
+
 					foreach ($seeds as $seed) {
 						$seeder = explode('/', $seed);
 						$seeder = str_replace('.php', '', end($seeder));
@@ -70,6 +77,7 @@ class MigrationCommand extends Command {
 							// Only run if the seed is not already in the database
 							if (Seed::whereName($seeder)->first() != null) continue;
 
+							// Run the seed
 							Artisan::call('db:seed', array('--class' => $seeder), new StreamOutput($stream));
 
 							// Add the seed to the table
@@ -80,6 +88,7 @@ class MigrationCommand extends Command {
 							$this->info(ucwords($package) .' '. $seeder .' seeded!');
 						}
 					}
+
 					$this->info(ucwords($package) .' seeds complete!');
 				}
 			}
