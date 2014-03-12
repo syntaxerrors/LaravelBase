@@ -11,10 +11,7 @@
 |
 */
 
-Artisan::add(new MigrationCommand);
-Artisan::resolve('MigrationCommand');
-
-Artisan::add(new listForBash);
-
-Artisan::add(new AutocompleteCommand);
-Artisan::resolve('AutocompleteCommand');
+Artisan::add(new DatabaseCommand);
+Artisan::resolve('DatabaseCommand');
+Artisan::add(new GulpCommand);
+Artisan::resolve('GulpCommand');

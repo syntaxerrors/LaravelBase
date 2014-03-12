@@ -28,12 +28,12 @@ return array(
 
 	'connections' => array(
 		'default' => array(
-			'host'      => 'localhost:1979',
-			'username'  => 'stygian',
-			'password'  => 'stygicide',
+			'host'      => '',
+			'username'  => '',
+			'password'  => '',
 			'key'       => '',
 			'keyphrase' => '',
-			'root'      => '/home/stygian/dev/test'
+			'root'      => ''
 		),
 
 	),

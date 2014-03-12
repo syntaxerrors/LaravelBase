@@ -5,14 +5,14 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\StreamOutput;
 
-class MigrationCommand extends Command {
+class DatabaseCommand extends Command {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'syntax:migrate';
+	protected $name = 'syntax:database';
 
 	/**
 	 * The console command description.

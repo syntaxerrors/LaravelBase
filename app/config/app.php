@@ -38,7 +38,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://stories.stygianvault.com',
+	'url' => 'http://YOUR_SITE.com',
 
 	/*
 	|--------------------------------------------------------------------------
