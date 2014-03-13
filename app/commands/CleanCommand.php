@@ -59,6 +59,7 @@ class CleanCommand extends Command {
 		parent::__construct();
 
 		$this->syntaxCoreDetails = new stdClass();
+		$this->stream            = fopen('php://output', 'w');
 	}
 
 	/**
@@ -69,9 +70,6 @@ class CleanCommand extends Command {
 	public function fire()
 	{
 		$this->comment('Starting final steps...');
-
-		// Set up the variables
-		$this->stream = fopen('php://output', 'w');
 
 		// Run the installation
 		$this->runArtisan();

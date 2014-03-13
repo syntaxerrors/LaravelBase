@@ -74,6 +74,7 @@ class SetupCommand extends Command {
 
 		$this->coreDetails = new stdClass();
 		$this->chatDetails = new stdClass();
+		$this->stream      = fopen('php://output', 'w');
 	}
 
 	/**
@@ -84,9 +85,6 @@ class SetupCommand extends Command {
 	public function fire()
 	{
 		$this->comment('Starting Syntax configuration...');
-
-		// Set up the variables
-		$this->stream = fopen('php://output', 'w');
 
 		// Set up the configs
 		$this->setUpSyntaxCore();

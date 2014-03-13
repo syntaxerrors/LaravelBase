@@ -58,8 +58,9 @@ class ConfigureCommand extends Command {
 	{
 		parent::__construct();
 
-		$this->remoteDetails     = new stdClass();
-		$this->databaseDetails   = new stdClass();
+		$this->remoteDetails   = new stdClass();
+		$this->databaseDetails = new stdClass();
+		$this->stream          = fopen('php://output', 'w');
 	}
 
 	/**
@@ -70,9 +71,6 @@ class ConfigureCommand extends Command {
 	public function fire()
 	{
 		$this->comment('Starting Laravel configurations...');
-
-		// Set up the variables
-		$this->stream = fopen('php://output', 'w');
 
 		// Set up the configs
 		$this->setUpRemote();

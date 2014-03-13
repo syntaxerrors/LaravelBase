@@ -22,6 +22,13 @@ class InstallCommand extends Command {
 	protected $description = 'Run the everything needed to get a syntax site up and running.';
 
 	/**
+	 * The output stream for any artisan commands
+	 *
+	 * @var string
+	 */
+	protected $stream;
+
+	/**
 	 * Create a new command instance.
 	 *
 	 * @return void
@@ -29,6 +36,7 @@ class InstallCommand extends Command {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->stream = fopen('php://output', 'w');
 	}
 
 	/**
