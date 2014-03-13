@@ -87,7 +87,7 @@ class SetupCommand extends Command {
 		$this->comment('Starting Syntax configuration...');
 
 		// Set up the configs
-		$this->setUpSyntaxCore();
+		$this->setUpCore();
 
 		// Get out syntax packages
 		$this->updateSyntax();
