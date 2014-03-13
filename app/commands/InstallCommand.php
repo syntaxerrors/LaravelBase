@@ -203,11 +203,8 @@ class InstallCommand extends Command {
 				$commands = [
 					'cd '. base_path(),
 					'composer require syntax/'. $package .':dev-master',
+					'php artisan config:publish syntax/'. $package
 				];
-
-				if (in_array($package, $this->syntaxPackagesWithConfig) && !File::exists(app_path('config/packages/syntax/chat'))) {
-					$commands[] = 'php artisan config:publish syntax/'. $package;
-				}
 
 				SSH::run($commands, function ($line) {
 					echo $line.PHP_EOL;
