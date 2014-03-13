@@ -53,12 +53,12 @@ class DatabaseCommand extends Command {
 				// Set up a migration location artisan can use
 				$migrationLocation = str_replace(base_path() .'/', '', $syntaxDirectory . $migrationDirectory);
 
-				$this->info('Running '. $package .' migrations...');
+				$this->comment('Running '. $package .' migrations...');
 
 				// Run the migrations
 				Artisan::call('migrate', array('--path' => $migrationLocation), new StreamOutput($stream));
 
-				$this->info(ucwords($package) .' migrations complete!');
+				$this->comment(ucwords($package) .' migrations complete!');
 			}
 
 			// Handle the seeds
@@ -66,7 +66,7 @@ class DatabaseCommand extends Command {
 				$seeds = File::files($syntaxDirectory . $seedDirectory);
 
 				if (count($seeds) > 0) {
-					$this->info('Running '. $package .' seeds...');
+					$this->comment('Running '. $package .' seeds...');
 
 					foreach ($seeds as $seed) {
 						$seeder = explode('/', $seed);
@@ -85,11 +85,11 @@ class DatabaseCommand extends Command {
 							$newSeed->name = $seeder;
 							$newSeed->save();
 
-							$this->info(ucwords($package) .' '. $seeder .' seeded!');
+							$this->comment(ucwords($package) .' '. $seeder .' seeded!');
 						}
 					}
 
-					$this->info(ucwords($package) .' seeds complete!');
+					$this->comment(ucwords($package) .' seeds complete!');
 				}
 			}
 		}

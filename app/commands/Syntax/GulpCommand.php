@@ -42,11 +42,11 @@ class GulpCommand extends Command {
 		$ignoredFiles = file(base_path('.gitignore'));
 
 		if (!in_array('/node_modules', $ignoredFiles)) {
-			$this->info('Adding node_modules directory to .gitignore');
+			$this->comment('Adding node_modules directory to .gitignore');
 			File::append(base_path('.gitignore'), "/node_modules");
 		}
 
-		$this->info('Adding all the gulp plugins...');
+		$this->comment('Adding all the gulp plugins...');
 		$rootDirectory = Config::get('remote.connections.default.root');
 
 		$commands = [
@@ -58,7 +58,7 @@ class GulpCommand extends Command {
 			echo $line.PHP_EOL;
 		});
 
-		$this->info('Finished adding gulp plugins.');
+		$this->comment('Finished adding gulp plugins.');
 	}
 
 	/**
