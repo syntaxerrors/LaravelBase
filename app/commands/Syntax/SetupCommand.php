@@ -195,7 +195,7 @@ class SetupCommand extends Command {
 	{
 		list($path, $contents) = $this->getConfig('packages/syntax/core/config.php');
 
-		foreach ($this->syntaxCoreDetails as $key => $value) {
+		foreach ($this->coreDetails as $key => $value) {
 			$contents = str_replace($this->laravel['config']['core::'. $key], $value, $contents);
 		}
 
