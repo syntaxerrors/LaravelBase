@@ -11,7 +11,11 @@
 |
 */
 
+Artisan::add(new InstallCommand);
+Artisan::resolve('InstallCommand');
+
 Artisan::add(new DatabaseCommand);
 Artisan::resolve('DatabaseCommand');
+
 Artisan::add(new GulpCommand);
 Artisan::resolve('GulpCommand');

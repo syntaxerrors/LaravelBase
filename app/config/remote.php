@@ -28,12 +28,12 @@ return array(
 
 	'connections' => array(
 		'default' => array(
-			'host'      => '',
-			'username'  => '',
-			'password'  => '',
-			'key'       => '',
-			'keyphrase' => '',
-			'root'      => ''
+			'host'      => 'HOST',
+			'username'  => 'USERNAME',
+			'password'  => 'PASSWORD',
+			'key'       => 'KEYLOCATION',
+			'keyphrase' => 'KEYPHRASE',
+			'root'      => 'ROOT'
 		),
 
 	),
