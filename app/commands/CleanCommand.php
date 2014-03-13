@@ -86,8 +86,9 @@ class CleanCommand extends Command {
 	 *******************************************************************/
 	protected function runArtisan()
 	{
-		$this->comment('Running artisan commands...');
+		$this->comment('Generating a key...');
 		Artisan::call('key:generate', array(), new StreamOutput($this->stream));
+		$this->comment('Adding the migration table...');
 		Artisan::call('migrate:install', array(), new StreamOutput($this->stream));
 		Artisan::call('syntax:database', array(), new StreamOutput($this->stream));
 		Artisan::call('syntax:gulp', array(), new StreamOutput($this->stream));

@@ -202,10 +202,10 @@ class SetupCommand extends Command {
 		File::put($path, $contents);
 	}
 
-	protected function configureChat($config)
+	protected function configureChat()
 	{
 		list($path, $contents) = $this->getConfig('packages/syntax/chat/chatConfig.json');
-		File::put($path, $config);
+		File::put($path, $this->chatConfig);
 	}
 
 	/********************************************************************
