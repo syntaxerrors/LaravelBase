@@ -179,7 +179,7 @@ class SetupCommand extends Command {
 		$this->chatDetails->port              = $this->ask('What is the chat port?  [Hit enter to leave as 1337]', 1337);
 		$this->chatDetails->backLog           = $this->ask('How much back log should the chats get?  [Hit enter to leave as 100]', 100);
 		$this->chatDetails->backFill          = $this->ask('How much should the chats backfil on connect?  [Hit enter to leave as 30]', 30);
-		$this->chatDetails->apiEndPoint       = $this->ask('What is the chat url?  [Hit enter to leave as '. $this->siteUrl .']', $this->siteUrl);
+		$this->chatDetails->apiEndPoint       = $this->ask('What is the chat url?');
 		$this->chatDetails->connectionMessage = $this->confirm('Should the chats show a connection message?  [Hit enter to leave as true]', true) ? true : false;
 
 		$this->chatConfig = json_encode($this->chatDetails, JSON_PRETTY_PRINT);
