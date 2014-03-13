@@ -163,10 +163,10 @@ class SetupCommand extends Command {
 	{
 		// Set up our syntax config
 		$this->comment('Setting up syntax details...');
-		$this->syntaxCoreDetails->controlRoomDetail = $this->ask('What is this site\'s control room name?');
-		$this->syntaxCoreDetails->siteName          = $this->ask('What is this name to display for this site?');
-		$this->syntaxCoreDetails->siteIcon          = $this->ask('What is this icon to display for this site? (Use tha last part of the font-awesome icon class)');
-		$this->syntaxCoreDetails->menu              = $this->ask('What is menu style should this site default to? (utopian or twitter)');
+		$this->coreDetails->controlRoomDetail = $this->ask('What is this site\'s control room name?');
+		$this->coreDetails->siteName          = $this->ask('What is this name to display for this site?');
+		$this->coreDetails->siteIcon          = $this->ask('What is this icon to display for this site? (Use tha last part of the font-awesome icon class)');
+		$this->coreDetails->menu              = $this->ask('What is menu style should this site default to? (utopian or twitter)');
 
 		$this->confirmConfig('core');
 	}
@@ -175,15 +175,14 @@ class SetupCommand extends Command {
 	{
 		// Set up our syntax config
 		$this->comment('Setting up syntax details...');
-		$chatDetails                    = new stdClass();
-		$chatDetails->debug             = $this->confirm('Should the chats show debug info?  [Hit enter to leave as true]', true) ? true : false;
-		$chatDetails->port              = $this->ask('What is the chat port?  [Hit enter to leave as 1337]', 1337);
-		$chatDetails->backLog           = $this->ask('How much back log should the chats get?  [Hit enter to leave as 100]', 100);
-		$chatDetails->backFill          = $this->ask('How much should the chats backfil on connect?  [Hit enter to leave as 30]', 30);
-		$chatDetails->apiEndPoint       = $this->ask('What is the chat url?  [Hit enter to leave as '. $this->siteUrl .']', $this->siteUrl);
-		$chatDetails->connectionMessage = $this->confirm('Should the chats show a connection message?  [Hit enter to leave as true]', true) ? true : false;
+		$this->chatDetails->debug             = $this->confirm('Should the chats show debug info?  [Hit enter to leave as true]', true) ? true : false;
+		$this->chatDetails->port              = $this->ask('What is the chat port?  [Hit enter to leave as 1337]', 1337);
+		$this->chatDetails->backLog           = $this->ask('How much back log should the chats get?  [Hit enter to leave as 100]', 100);
+		$this->chatDetails->backFill          = $this->ask('How much should the chats backfil on connect?  [Hit enter to leave as 30]', 30);
+		$this->chatDetails->apiEndPoint       = $this->ask('What is the chat url?  [Hit enter to leave as '. $this->siteUrl .']', $this->siteUrl);
+		$this->chatDetails->connectionMessage = $this->confirm('Should the chats show a connection message?  [Hit enter to leave as true]', true) ? true : false;
 
-		$this->chatConfig = json_encode($chatDetails, JSON_PRETTY_PRINT);
+		$this->chatConfig = json_encode($this->chatDetails, JSON_PRETTY_PRINT);
 
 		$this->confirmConfig('chat');
 	}
