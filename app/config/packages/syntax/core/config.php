@@ -22,7 +22,7 @@ return array(
 	*/
 
 	'siteName' => 'YOUR_SITE',
-	'siteIcon' => null,
+	'siteIcon' => 'YOUR_ICON',
 
 	/*
 	|--------------------------------------------------------------------------
