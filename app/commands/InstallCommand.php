@@ -47,9 +47,9 @@ class InstallCommand extends Command {
 	public function fire()
 	{
 		$this->comment('Starting site installation...');
-		Artisan::call('syntax:configure', null, new StreamOutput($this->stream));
-		Artisan::call('syntax:setup', null, new StreamOutput($this->stream));
-		Artisan::call('syntax:clean', null, new StreamOutput($this->stream));
+		Artisan::call('syntax:configure', array(), new StreamOutput($this->stream));
+		Artisan::call('syntax:setup', array(), new StreamOutput($this->stream));
+		Artisan::call('syntax:clean', array(), new StreamOutput($this->stream));
 		$this->comment('Installation complete!');
 	}
 

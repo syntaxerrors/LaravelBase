@@ -87,10 +87,10 @@ class CleanCommand extends Command {
 	protected function runArtisan()
 	{
 		$this->comment('Running artisan commands...');
-		Artisan::call('key:generate', null, new StreamOutput($this->stream));
-		Artisan::call('migrate:install', null, new StreamOutput($this->stream));
-		Artisan::call('syntax:database', null, new StreamOutput($this->stream));
-		Artisan::call('syntax:gulp', null, new StreamOutput($this->stream));
+		Artisan::call('key:generate', array(), new StreamOutput($this->stream));
+		Artisan::call('migrate:install', array(), new StreamOutput($this->stream));
+		Artisan::call('syntax:database', array(), new StreamOutput($this->stream));
+		Artisan::call('syntax:gulp', array(), new StreamOutput($this->stream));
 	}
 
 	protected function runGulp()
