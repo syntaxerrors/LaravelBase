@@ -136,7 +136,6 @@ return array(
 		'Syntax\Core\View\ViewServiceProvider',
 		'Syntax\Core\Control\CoreBugServiceProvider',
 		'Syntax\Core\Utility\UtilityServiceProvider',
-		'Syntax\Core\Utility\AliasServiceProvider',
 	),
 
 	/*

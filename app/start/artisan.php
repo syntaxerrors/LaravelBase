@@ -28,3 +28,6 @@ Artisan::resolve('DatabaseCommand');
 
 Artisan::add(new GulpCommand);
 Artisan::resolve('GulpCommand');
+
+Artisan::add(new UpdateCoreCommand);
+Artisan::resolve('UpdateCoreCommand');

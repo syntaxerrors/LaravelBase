@@ -9,27 +9,6 @@ class MenuController extends Core_BaseController
 			->add('/', 'Home');
 
 		if (Auth::check()) {
-			// Forum access
-			if ($this->hasPermission('FORUM_ACCESS')) {
-				$postsCount = $this->activeUser->unreadPostCount();
-				$forumTitle = ($postsCount > 0 ? 'Forums ('. $postsCount .')' : 'Forums');
-
-				// Forum Options
-				if ($this->hasPermission('FORUM_ADMIN')) {
-					Menu::handler('main')->add('/forum', $forumTitle, Menu::items()
-						->add('/forum/moderation/dashboard', 'Moderation Panel')
-						->add('/forum/admin/dashboard', 'Admin Panel', Menu::items()
-							->add('/forum/category/add', 'Add Category')
-							->add('/forum/board/add', 'Add Board'))
-					);
-				} elseif ($this->hasPermission('FORUM_MOD')) {
-					Menu::handler('main')->add('/forum', $forumTitle, Menu::items()
-						->add('/forum/moderation/dashboard', 'Moderation Panel'));
-				} else {
-					Menu::handler('main')->add('/forum', $forumTitle);
-				}
-			}
-
 			// Manage Menu
 			if ($this->hasPermission('DEVELOPER')) {
 				Menu::handler('mainRight')
