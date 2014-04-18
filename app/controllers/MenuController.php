@@ -13,10 +13,7 @@ class MenuController extends Core_BaseController
 			if ($this->hasPermission('DEVELOPER')) {
 				Menu::handler('mainRight')
 					->add('javascript:void(0);', 'Management', Menu::items()
-						->add('/admin', 'Dev Panel')
-						->add('/manage', 'Video Panel')
-						->add('/video/add', 'Add Video')
-						->add('/video/rss', 'RSS'));
+						->add('/admin', 'Dev Panel'));
 			}
 
 			// User Menu
