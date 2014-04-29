@@ -9,7 +9,7 @@ var rename     = require("gulp-rename");
 var concat     = require('gulp-concat');
 
 // Where do you store your JS files?
-var jsDir       = 'vendor/syntax/core/public/js';
+var jsDir       = 'vendor/syntax/core/assets/js';
 var targetJSDir = 'public/js';
 
 // Extra JS
