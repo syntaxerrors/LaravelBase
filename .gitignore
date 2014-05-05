@@ -9,3 +9,4 @@ composer.lock
 /node_modules
 /app/config/remote.php
 /app/config/database.php
+/.idea

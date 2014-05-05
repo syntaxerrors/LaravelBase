@@ -61,9 +61,6 @@
 [submodule "public/vendor/bootstrap3"]
 	path = public/vendor/bootstrap3
 	url = git@github.com:twbs/bootstrap.git
-[submodule "public/vendor/Bootstrap-Image-Gallery"]
-	path = public/vendor/Bootstrap-Image-Gallery
-	url = git@github.com:blueimp/Bootstrap-Image-Gallery.git
 [submodule "public/vendor/Gallery"]
 	path = public/vendor/Gallery
 	url = git@github.com:blueimp/Gallery.git
